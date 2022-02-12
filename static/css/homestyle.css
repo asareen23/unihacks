@@ -1,0 +1,39 @@
+body {
+    background: #F8F8F8
+}
+
+.title {
+    font-family: 'Inter', sans-serif;
+    margin-left: 7rem;
+    padding-top: 9rem;
+    font-size: 30px;
+}
+
+.title h1 {
+    font-weight: bold;
+    font-size: 130px;
+}
+
+.title h2 {
+    font-size: 80px;
+}
+
+.title #titleimage  {
+    display: flex;
+    flex: 50%;
+}
+
+.title #titleimage img {
+    height: 550px;
+}
+
+.title #titleimage #img2 {
+    transform: scaleX(-1);
+    margin-left: 5rem;
+}
+
+.gallery {
+    margin-top: 1rem;
+    font-family: 'Inter', sans-serif;
+}
+
