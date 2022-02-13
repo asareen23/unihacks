@@ -32,8 +32,59 @@ body {
     margin-left: 5rem;
 }
 
-.gallery {
-    margin-top: 1rem;
+.gallery h1 {
+    margin: 3.5rem 0 3rem 0;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    padding-top: 4rem;
+    font-size: 50px;
+}
+
+.gallery .slider {
+    display: flex;
+    flex: 33%;
+    justify-content: center;
+}
+
+.gallery .slider a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.gallery .slider .box {
+    width: 500px;
+    height: 610px;
+    background-color: #FAF9F6;
+    border-radius: 10px;
+    box-shadow: 2px 10px 12px rgba(0,0,0,.5);
+    margin: 0 0 4rem 3rem;
+    transition: all .4s ease-in-out
+}
+
+.gallery .slider .box:hover {
+    transform: scale(1.15);
+}
+
+.gallery .slider .box img {
+    border-radius: 9px;
+    height: 400px;
+    width: 400px;
+    margin-top: 50px;
+}
+
+.gallery .slider .box #name {
+    font-family: 'Playfair Display', serif;
+    font-weight: 800;
+    font-style: italic;
+    font-size: 40px;
+    letter-spacing: 3px;
+    color: #212529;
+}
+
+.gallery .slider .box p {
+    font-style: italic;
+    font-size: 20px;
+    color: gray;
     font-family: 'Inter', sans-serif;
 }
 
