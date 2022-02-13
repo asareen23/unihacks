@@ -35,6 +35,17 @@ def get_artist_by_id(id):
         artist_genres = artist_genres[0:3]
     return artist_name, artist_picture, artist_followers, artist_genres
 
+def preview_songs(id):
+    results = sp.artist_top_tracks(id)
+    track_names = []
+    track_audio = []
+    track_cover_art = []
+    for track in results['tracks'][:3]:
+        track_names.append(track['name'])
+        track_audio.append(track['preview_url'])
+        track_cover_art.append(track['album']['images'][0]['url'])
+    return track_names, track_audio, track_cover_art
+
 def artist_info(artist_ids):
     artist_names = []
     artist_pictures = []
@@ -60,7 +71,8 @@ def main():  # put application's code here
 @app.route("/<id>")
 def artist_page(id):
     info = get_artist_by_id(id)
-    return render_template("html/artist_page.html", name=info[0], picture = info[1], followers = info[2], genres = info[3])
+    tracks = preview_songs(id)
+    return render_template("html/artist_page.html", name=info[0], picture = info[1], followers = info[2], genres = info[3], track_names = tracks[0], track_audio = tracks[1], track_cover = tracks[2])
 
 if __name__ == '__main__':
     app.run()
