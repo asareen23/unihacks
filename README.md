@@ -1,3 +1,3 @@
-# unihacks-2022
+# Untitled
 
-work in progress
+Un-title the songs and focus on the artists. 
