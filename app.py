@@ -29,6 +29,10 @@ def get_artist_by_id(id):
     artist_picture = artist_info.get('images')[0].get("url")
     artist_followers = "{:,}".format(artist_info.get('followers').get('total'))
     artist_genres = artist_info.get('genres')
+    if len(artist_genres) <= 3:
+        pass
+    else:
+        artist_genres = artist_genres[0:3]
     return artist_name, artist_picture, artist_followers, artist_genres
 
 def artist_info(artist_ids):
@@ -47,12 +51,7 @@ artists = generate_artists(playlist)
 
 artists_list = artist_info(artists)
 
-print(get_artist_by_id("1McMsnEElThX1knmY4oliG"))
-
-print("hi!")
-
 app = Flask(__name__)
-
 
 @app.route('/')
 def main():  # put application's code here
@@ -61,7 +60,7 @@ def main():  # put application's code here
 @app.route("/<id>")
 def artist_page(id):
     info = get_artist_by_id(id)
-    return render_template("html/artist_page.html", name=info[0], picture = info[1])
+    return render_template("html/artist_page.html", name=info[0], picture = info[1], followers = info[2], genres = info[3])
 
 if __name__ == '__main__':
     app.run()
