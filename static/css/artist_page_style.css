@@ -3,12 +3,12 @@ body {
 }
 
 #artist-info {
-    margin: 3rem 0 0 1rem;
+    margin: 3rem 2rem 0 1rem;
 }
 
 #artist-info .name {
     font-family: 'Playfair Display', serif;
-    font-size: 145px;
+    font-size: 125px;
     letter-spacing: 5px;
     font-weight: bold;
     font-style: italic;
@@ -25,6 +25,25 @@ body {
     height: 500px;
     width: 500px;
     border-radius: 5px;
+}
+
+#artist-info button {
+    margin-top: 20px;
+    border-radius: 7px;
+    padding: 8px;
+    background-color: #AFE1AF;
+    border: none;
+    transition: all .2s ease-in-out;
+}
+
+#artist-info button:hover {
+    transform: scale(1.05);
+  }
+
+#artist-info button a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
 }
 
 #artist-info .tags {
@@ -50,4 +69,47 @@ body {
   #artist-info #tag:hover {
     transform: scale(1.20);
   }
+
+    #artist-info #gallery {
+    background-color: #F8F8F8;
+    margin-left: .5rem;
+    width: 550px;
+    padding: 15px 0 15px 0;
+  }
+
   
+  #artist-info #gallery .artist-row {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #artist-info #gallery .text-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #artist-info #gallery img {
+      height: 150px;
+      width: 150px;
+      border-radius: 20px;
+  }
+
+  #artist-info #gallery ul {
+    list-style: none;
+  }
+
+  #artist-info #gallery li {
+    font-family: 'Playfair Display', serif;
+    margin-left: 30px; 
+    font-weight: bold;
+    font-style: italic;
+    font-size: 25px;
+  }
+
+  #artist-info #gallery audio {
+      margin-left: 10px; 
+  }
+
+
+

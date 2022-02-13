@@ -20,26 +20,50 @@
             <div class="row">
                 <div class="col-4">
                     <img src="{{picture}}" alt="">
+                    <button style="width: 500px"><a href="#">Contact</a></button>
                 </div>
-                <div class="col-8">
+                <div class="col-4">
                     <span class="name align-self-start">{{name}}</span>
                     <p class="followers">Followers: {{followers}}</p>
                     <ul class="tags">
-                        {% for genre in genres%}
-                        <li id="tag">{{genre}}</li>
-                        {% endfor %}
+                        {% if genres |length==0  %}
+                            <li id="tag">No Genres</li>
+                        {% else %}
+                            {% for genre in genres%}
+                            <li id="tag">{{genre}}</li>
+                            {% endfor %}
+                            {% endif %}
                     </ul>
+                </div>
+                <div class="col-4">
+                    <div id="gallery">
+                        <ul>
+                                {% for x in range(0,3) %}
+                                <div class="artist-row">
+                                    <img src={{track_cover[x]}} alt="">
+                                    <div class="text-row">
+                                        <li>{{track_names[x]}}</li>
+                                        {%if track_audio[x] is none %}
+                                            <p>No audio :(</p>
+                                        {%else%}
+                                        <audio controls loop>
+                                            <source src={{track_audio[x]}} type="audio/mpeg">
+                                        </audio>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                {% if x < 2 %}
+                                <hr style="width: 450px">
+                                {% endif %}
+                                {% endfor %}
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
         
-            
         
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-        <script>
-            const colors = ['#fbf8cc', '#fde4cf', '#ffcfd2', 'f1c0e8', 'a3c4f3', '90dbf4', '8eecf5', '98f5e1', 'b9fbc0'];
-            const random_color = colors[Math.floor(Math.random() * colors.length)];
-            document.getElementById('tag').style.background = random_color;
-        </script>
+        <script src="../../static/js/coloredtags.js" async></script>
     </body>
 </html>
