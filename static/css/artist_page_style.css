@@ -1,0 +1,53 @@
+body {
+    background: #FAF9F6;
+}
+
+#artist-info {
+    margin: 3rem 0 0 1rem;
+}
+
+#artist-info .name {
+    font-family: 'Playfair Display', serif;
+    font-size: 145px;
+    letter-spacing: 5px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+#artist-info .followers {
+    font-size: 35px;
+    color: gray;
+    font-family: 'Inter', sans-serif;
+    font-style: italic;
+}
+
+#artist-info img {
+    height: 500px;
+    width: 500px;
+    border-radius: 5px;
+}
+
+#artist-info .tags {
+    list-style: none;
+    margin-top: 2rem;
+    padding: 0;
+  }
+  
+  #artist-info .tags li {
+    text-align: center;
+    text-transform: capitalize;
+    background-color: #999;
+    font-family: 'Montserrat', sans-serif;
+    width: 300px;
+    border-radius: 5px;
+    color: white;
+    padding: 10px;
+    margin: 0 3rem 10px 0rem;
+    text-decoration: none;
+    transition: all .2s ease-in-out;
+  }
+
+  #artist-info #tag:hover {
+    transform: scale(1.20);
+  }
+  
